@@ -1,0 +1,31 @@
+baseURL = 'https://go-graphdrawing.github.io/'
+locale  = 'en-us'
+title   = 'go-graphdrawing'
+# No theme — layouts live in ./layouts
+
+disableKinds = ['taxonomy', 'term', 'rss', 'sitemap']
+
+[params]
+  description = "go-graphdrawing is the pure-Go (CGO=0) home for placing a graph on a plane — Sugiyama layering, force-directed placement, trees and planar embeddings. The name is the discipline's own."
+  brand       = "go-graphdrawing"
+  github      = "go-graphdrawing"
+  heroAccent  = "go-graphdrawing"
+  titleSuffix = "placing a graph on a plane"
+  heroTagline = "Placing a graph on a plane. The discipline's name, not a euphemism."
+
+  heroIntro = [
+    "<strong>go-graphdrawing</strong> is where <strong>Sugiyama layering</strong>, <strong>force-directed placement</strong>, trees and planar embeddings will live: pure Go, cgo-free. The name is the field's own — <em>graph drawing</em>, as in the GD conference and Di Battista, Eades, Tamassia and Tollis — so the code can read like the literature it implements.",
+    "It is <strong>reserved, not yet built</strong>. The name and the shape are settled; the code waits for a consumer that needs it. What that consumer will be is already clearer than what it will not: automatic placement is a feature of <em>diagrams</em>, and graph placement is not TeX-specific."
+  ]
+
+[menu]
+  [[menu.main]]
+    identifier = "why"
+    name       = "Why"
+    url        = "#why"
+    weight     = 10
+  [[menu.main]]
+    identifier = "status"
+    name       = "Status"
+    url        = "#status"
+    weight     = 20

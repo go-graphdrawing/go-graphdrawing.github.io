@@ -1,0 +1,64 @@
+{{ define "main" }}
+<section class="hero">
+  <img class="hero-logo" src="{{ "img/logo.svg" | relURL }}" alt="go-graphdrawing logo" width="96" height="96">
+  <h1>
+    <span class="accent">{{ .Site.Params.heroAccent }}</span>
+  </h1>
+  {{ with .Site.Params.heroTagline }}<p class="tag">{{ . }}</p>{{ end }}
+  <div class="intro">
+    {{ range .Site.Params.heroIntro }}<p>{{ . | safeHTML }}</p>{{ end }}
+  </div>
+  <div class="cta">
+    <a class="btn btn-ghost" href="https://github.com/go-graphdrawing">GitHub</a>
+  </div>
+  <p class="pills">
+    <span class="pill">Pure Go</span>
+    <span class="pill">CGO=0</span>
+    <span class="pill">Reserved</span>
+    <span class="pill">BSD-3-Clause</span>
+  </p>
+</section>
+
+<section id="why">
+  <h2>Why the name</h2>
+  <p>
+    <em>Graph drawing</em> is the discipline's own name &mdash; the GD conference, and
+    Di Battista, Eades, Tamassia and Tollis. Naming the org after the field means the
+    code inherits the literature's vocabulary: a layering pass is a layering pass, a
+    network simplex is a network simplex, and a reader who knows the papers can follow
+    the source.
+  </p>
+  <p>
+    It is deliberately <strong>not</strong> called <code>layout</code>. In this fleet
+    that word already means widget layout, and a repository called
+    <code>go-layout</code> would be read as user-interface code by everyone who saw it.
+  </p>
+</section>
+
+<section id="status">
+  <h2>Status: reserved, not started</h2>
+  <p class="section-lead">
+    The name and the shape are settled. The code waits for a consumer that needs it
+    &mdash; and the measurement says that consumer is not TeX.
+  </p>
+  <div class="grid">
+    <div class="card">
+      <h4>What the reference costs</h4>
+      <p>pgf's <code>graphdrawing</code>, driven from LuaTeX, is <strong>167 files and 37&nbsp;163 lines of Lua</strong> — of which some 2&nbsp;000 are TeX&harr;Lua glue a Go port would not need.</p>
+    </div>
+    <div class="card">
+      <h4>What it would buy TeX</h4>
+      <p>Across <strong>10&nbsp;025 real beamer talks, 5 use it</strong>. Building 37&nbsp;000 lines for five documents is the worst effort-to-effect trade in that project.</p>
+    </div>
+    <div class="card">
+      <h4>What will trigger it</h4>
+      <p><strong>Diagrams.</strong> Isometric and node-link diagrams where automatic placement <em>is</em> the feature. Graph placement is not TeX-specific and should not be born inside a TeX engine.</p>
+    </div>
+  </div>
+  <p>
+    A Lua interpreter is not the shortcut it looks like, either: the reference is
+    driven through LuaTeX's own API, so running it unchanged would mean emulating
+    LuaTeX rather than merely having a Lua VM.
+  </p>
+</section>
+{{ end }}
